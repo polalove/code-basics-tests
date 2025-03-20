@@ -20,7 +20,7 @@ public class AuthorizationTests extends TestBase {
                 loginPage.enterEmail("pola228@list.ru");
             });
             step("Вводи пароль", () -> {
-                loginPage.enterPassword("sfvwghZX32");
+                loginPage.enterPassword("12345qwerty");
             });
             step("Нажать кнопку 'Войти'", () -> {
                 loginPage.clickSubmitButton();
