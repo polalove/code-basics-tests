@@ -1,10 +1,13 @@
 package tests;
 
+import data.Credentials;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.AuthenticationPage;
 
+import static data.Credentials.LOGIN;
+import static data.Credentials.PASSWORD;
 import static io.qameta.allure.Allure.step;
 
 @Tag("codebasics-auth-tests")
@@ -23,10 +26,10 @@ public class UserAuthenticationTests extends TestBase {
             authenticationPage.openLoginPage(0);
         });
         step("Вводим email", () -> {
-            authenticationPage.enterEmail("pola228@list.ru");
+            authenticationPage.enterEmail(LOGIN);
         });
         step("Вводим пароль", () -> {
-            authenticationPage.enterPassword("12345qwerty");
+            authenticationPage.enterPassword(PASSWORD);
         });
         step("Нажать кнопку 'Войти'", () -> {
             authenticationPage.clickSubmitButton();
