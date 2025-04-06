@@ -22,7 +22,7 @@ public class TestBase {
         Configuration.baseUrl = "https://code-basics.com";
         Configuration.browserSize = System.getProperty("browserSize", driver.browserSize());
         Configuration.browser = System.getProperty("browserType", driver.browserType());
-        //Configuration.remote = System.getProperty("remoteUrl", driver.remoteUrl());
+        Configuration.remote = System.getProperty("remoteUrl", driver.remoteUrl());
         Configuration.pageLoadStrategy = "eager";
 
         SelenideLogger.addListener("allure", new AllureSelenide());

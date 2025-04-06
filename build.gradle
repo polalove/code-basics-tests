@@ -1,10 +1,22 @@
 plugins {
     id 'java'
-    id('io.qameta.allure') version '2.11.2'
+    id('io.qameta.allure') version '2.12.0'
 }
 
-group = 'com.anaSense'
-version = '1.0'
+dependencies {
+    testImplementation(
+            'org.aeonbits.owner:owner:1.0.12',
+            'org.junit.jupiter:junit-jupiter:5.8.1',
+            'com.codeborne:selenide:7.0.4',
+            'io.qameta.allure:allure-selenide:2.26.0',
+            'org.assertj:assertj-core:3.25.3',
+            'org.slf4j:slf4j-simple:2.0.7'
+    )
+}
+
+repositories {
+    mavenCentral()
+}
 
 allure {
     report {
@@ -21,24 +33,16 @@ allure {
     }
 }
 
-repositories {
-    mavenCentral()
+compileJava {
+    options.encoding = 'UTF-8'
 }
-
-dependencies {
-    testImplementation(
-            'org.aeonbits.owner:owner:1.0.12',
-            'org.junit.jupiter:junit-jupiter:5.8.1',
-            'com.codeborne:selenide:7.0.4',
-            'io.qameta.allure:allure-selenide:2.26.0',
-            'org.assertj:assertj-core:3.25.3',
-            'org.slf4j:slf4j-simple:2.0.7'
-    )
+compileTestJava {
+    options.encoding = 'UTF-8'
 }
 
 tasks.withType(Test) {
-    useJUnitPlatform()
     systemProperties(System.getProperties())
+    useJUnitPlatform()
 
     testLogging {
         lifecycle {
@@ -47,4 +51,11 @@ tasks.withType(Test) {
         }
     }
 }
+
+task uiTests(type: Test) {
+    useJUnitPlatform {
+        includeTags("codebasics-auth-tests")
+    }
+}
+
 

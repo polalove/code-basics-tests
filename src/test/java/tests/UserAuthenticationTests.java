@@ -1,11 +1,13 @@
 package tests;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.AuthenticationPage;
 
 import static io.qameta.allure.Allure.step;
 
+@Tag("codebasics-auth-tests")
 public class UserAuthenticationTests extends TestBase {
 
     AuthenticationPage authenticationPage = new AuthenticationPage();
@@ -13,13 +15,16 @@ public class UserAuthenticationTests extends TestBase {
     @Test
     @DisplayName("Успешная авторизация с валидными данными")
     void successfulLoginWithValidCredentialsTest() {
-        step("Открыть страницу авторизации", () -> {
-            authenticationPage.openLoginPage(1);
+        step("Открываем главную станицу", () -> {
+            authenticationPage.openMainPage();
+        });
+        step("Переходим на страницу авторизации", () -> {
+            authenticationPage.openLoginPage(0);
         });
         step("Вводим email", () -> {
             authenticationPage.enterEmail("pola228@list.ru");
         });
-        step("Вводи пароль", () -> {
+        step("Вводим пароль", () -> {
             authenticationPage.enterPassword("12345qwerty");
         });
         step("Нажать кнопку 'Войти'", () -> {
@@ -33,13 +38,16 @@ public class UserAuthenticationTests extends TestBase {
     @Test
     @DisplayName("Авторизация с неверным паролем")
     void loginWithIncorrectPasswordTest() {
-        step("Открыть страницу авторизации", () -> {
-            authenticationPage.openLoginPage(1);
+        step("Открываем главную станицу", () -> {
+            authenticationPage.openMainPage();
+        });
+        step("Переходим на страницу авторизации", () -> {
+            authenticationPage.openLoginPage(0);
         });
         step("Вводим email", () -> {
             authenticationPage.enterEmail("pola228@list.ru");
         });
-        step("Вводи пароль", () -> {
+        step("Вводим пароль", () -> {
             authenticationPage.enterPassword("wrong_password");
         });
         step("Нажать кнопку 'Войти'", () -> {
@@ -53,8 +61,11 @@ public class UserAuthenticationTests extends TestBase {
     @Test
     @DisplayName("Переход на страницу восстановления пароля")
     void navigateToPasswordRecoveryPage() {
-        step("Открыть страницу авторизации", () -> {
-            authenticationPage.openLoginPage(1);
+        step("Открываем главную станицу", () -> {
+            authenticationPage.openMainPage();
+        });
+        step("Переходим на страницу авторизации", () -> {
+            authenticationPage.openLoginPage(0);
         });
         step("Нажимаем на кнопку 'Восстановить'", () -> {
             authenticationPage.clickRecoveryLink();
@@ -67,8 +78,11 @@ public class UserAuthenticationTests extends TestBase {
     @Test
     @DisplayName("Успешное восстановление пароля с валидным email")
     void recoverPasswordWithValidEmail() {
-        step("Открыть страницу авторизации", () -> {
-            authenticationPage.openLoginPage(1);
+        step("Открываем главную станицу", () -> {
+            authenticationPage.openMainPage();
+        });
+        step("Переходим на страницу авторизации", () -> {
+            authenticationPage.openLoginPage(0);
         });
         step("Нажимаем на кнопку 'Восстановить'", () -> {
             authenticationPage.clickRecoveryLink();
@@ -87,8 +101,11 @@ public class UserAuthenticationTests extends TestBase {
     @Test
     @DisplayName("Восстановление пароля с невалидным email")
     void recoverPasswordWithInvalidEmail() {
-        step("Открыть страницу авторизации", () -> {
-            authenticationPage.openLoginPage(1);
+        step("Открываем главную станицу", () -> {
+            authenticationPage.openMainPage();
+        });
+        step("Переходим на страницу авторизации", () -> {
+            authenticationPage.openLoginPage(0);
         });
         step("Нажимаем на кнопку 'Восстановить'", () -> {
             authenticationPage.clickRecoveryLink();
@@ -107,8 +124,11 @@ public class UserAuthenticationTests extends TestBase {
     @Test
     @DisplayName("Восстановление пароля с несуществующим email")
     void recoverPasswordWithNonExistentEmail() {
-        step("Открыть страницу авторизации", () -> {
-            authenticationPage.openLoginPage(1);
+        step("Открываем главную станицу", () -> {
+            authenticationPage.openMainPage();
+        });
+        step("Переходим на страницу авторизации", () -> {
+            authenticationPage.openLoginPage(0);
         });
         step("Нажимаем на кнопку 'Восстановить'", () -> {
             authenticationPage.clickRecoveryLink();
@@ -127,8 +147,11 @@ public class UserAuthenticationTests extends TestBase {
     @Test
     @DisplayName("Восстановление пароля с пустым полем email")
     void recoverPasswordWithEmptyEmail() {
-        step("Открыть страницу авторизации", () -> {
-            authenticationPage.openLoginPage(1);
+        step("Открываем главную станицу", () -> {
+            authenticationPage.openMainPage();
+        });
+        step("Переходим на страницу авторизации", () -> {
+            authenticationPage.openLoginPage(0);
         });
         step("Нажимаем на кнопку 'Восстановить'", () -> {
             authenticationPage.clickRecoveryLink();

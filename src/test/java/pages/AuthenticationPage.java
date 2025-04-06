@@ -3,14 +3,12 @@ package pages;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverConditions.url;
 
 public class AuthenticationPage {
 
-    // Локаторы элементов страницы
     private final ElementsCollection loginLink = $$(".link-body-emphasis.nav-link");
     private final SelenideElement emailInput = $("#user_sign_in_form_email");
     private final SelenideElement passwordInput = $("#user_sign_in_form_password");
@@ -20,28 +18,29 @@ public class AuthenticationPage {
     private final SelenideElement recoveryPasswordHeader = $("h1");
     private final SelenideElement recoveryEmailInput = $("#remind_password_form_email");
 
-    // Метод для перехода на страницу авторизации
-    public void openLoginPage(int index) {
+
+    public void openMainPage() {
         open("/ru");
+    }
+
+    public void openLoginPage(int index) {
         loginLink.get(index).click();
     }
 
-    // Метод для ввода email
+
     public void enterEmail(String email) {
         emailInput.setValue(email);
     }
 
-    // Метод для ввода пароля
     public void enterPassword(String password) {
         passwordInput.setValue(password);
     }
 
-    // Метод для нажатия кнопки "Войти"
     public void clickSubmitButton() {
         submitButton.click();
+        sleep(200);
     }
 
-    // Метод для проверки сообщения об успешной авторизации
     public void checkAlertMessage(String expectedText) {
         alertMessage
                 .shouldBe(visible)
