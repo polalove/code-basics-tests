@@ -49,7 +49,7 @@ public class UserAuthenticationTests extends TestBase {
             authenticationPage.openLoginPage(0);
         });
         step("Вводим email", () -> {
-            authenticationPage.enterEmail("pola228@list.ru");
+            authenticationPage.enterEmail(LOGIN);
         });
         step("Вводим пароль", () -> {
             authenticationPage.enterPassword("wrong_password");
@@ -92,7 +92,7 @@ public class UserAuthenticationTests extends TestBase {
             authenticationPage.clickRecoveryLink();
         });
         step("Вводим email", () -> {
-            authenticationPage.enterRecoveryEmail("pola228@list.ru");
+            authenticationPage.enterRecoveryEmail(LOGIN);
         });
         step("Нажимаем на кнопку 'Восстановить'", () -> {
             authenticationPage.clickSubmitButton();
