@@ -8,6 +8,7 @@ import pages.AuthenticationPage;
 import static io.qameta.allure.Allure.step;
 
 @Tag("codebasics-auth-tests")
+@DisplayName("Тесты на авторизацию")
 public class UserAuthenticationTests extends TestBase {
 
     AuthenticationPage authenticationPage = new AuthenticationPage();
