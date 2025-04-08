@@ -26,7 +26,7 @@ public class AuthenticationPage {
         loginLink.get(index).click();
     }
 
-    @Step("Вводим email: {email}")
+    @Step("Вводим email")
     public void enterEmail(String email) {
         emailInput.setValue(email);
     }
@@ -42,14 +42,14 @@ public class AuthenticationPage {
         sleep(200);
     }
 
-    @Step("Проверяем сообщение: '{expectedText}'")
+    @Step("Проверяем сообщение")
     public void checkAlertMessage(String expectedText) {
         alertMessage
                 .shouldBe(visible)
                 .shouldHave(text(expectedText));
     }
 
-    @Step("Проверяем URL: '{url}'")
+    @Step("Проверяем URL")
     public void checkUrlCorrection(String url) {
         webdriver().shouldHave(url(url));
     }
@@ -59,12 +59,12 @@ public class AuthenticationPage {
         passwordLink.click();
     }
 
-    @Step("Проверяем заголовок: '{text}'")
+    @Step("Проверяем заголовок")
     public void checkRecoveryMessage(String text) {
         recoveryPasswordHeader.shouldHave(text(text));
     }
 
-    @Step("Вводим email для восстановления: '{email}'")
+    @Step("Вводим email для восстановления")
     public void enterRecoveryEmail(String email) {
         recoveryEmailInput.setValue(email);
     }
