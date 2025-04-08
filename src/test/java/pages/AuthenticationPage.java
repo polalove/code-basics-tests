@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
@@ -19,42 +20,51 @@ public class AuthenticationPage {
     private final SelenideElement recoveryEmailInput = $("#remind_password_form_email");
 
 
+    @Step("Открываем страницу авторизации")
     public void openLoginPage(int index) {
         open("/ru");
         loginLink.get(index).click();
     }
 
+    @Step("Вводим email: {email}")
     public void enterEmail(String email) {
         emailInput.setValue(email);
     }
 
+    @Step("Вводим пароль")
     public void enterPassword(String password) {
         passwordInput.setValue(password);
     }
 
+    @Step("Нажимаем кнопку 'Войти'")
     public void clickSubmitButton() {
         submitButton.click();
         sleep(200);
     }
 
+    @Step("Проверяем сообщение: '{expectedText}'")
     public void checkAlertMessage(String expectedText) {
         alertMessage
                 .shouldBe(visible)
                 .shouldHave(text(expectedText));
     }
 
+    @Step("Проверяем URL: '{url}'")
     public void checkUrlCorrection(String url) {
         webdriver().shouldHave(url(url));
     }
 
+    @Step("Нажимаем 'Восстановить пароль'")
     public void clickRecoveryLink() {
         passwordLink.click();
     }
 
+    @Step("Проверяем заголовок: '{text}'")
     public void checkRecoveryMessage(String text) {
         recoveryPasswordHeader.shouldHave(text(text));
     }
 
+    @Step("Вводим email для восстановления: '{email}'")
     public void enterRecoveryEmail(String email) {
         recoveryEmailInput.setValue(email);
     }
