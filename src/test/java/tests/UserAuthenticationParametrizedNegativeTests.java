@@ -22,7 +22,7 @@ public class UserAuthenticationParametrizedNegativeTests extends TestBase {
 
     @ParameterizedTest(name = "Авторизация с неверным паролем: {0}")
     @MethodSource("provideWrongPasswords")
-    @DisplayName("Негативные тесты: авторизация с неверными паролями")
+    @DisplayName("Негативные тесты: авторизация с неверными паролями. ")
     void loginWithIncorrectPasswordTest(String password) {
         authenticationPage.openLoginPage(0);
         authenticationPage.enterEmail(LOGIN);
@@ -49,7 +49,7 @@ public class UserAuthenticationParametrizedNegativeTests extends TestBase {
             "noatsign",
             "space in@email.com"
     })
-    @DisplayName("Негативные тесты: невалидные email при восстановлении")
+    @DisplayName("Негативные тесты: невалидные email при восстановлении. ")
     void recoverPasswordWithInvalidEmailTest(String email) {
         authenticationPage.openLoginPage(0);
         authenticationPage.clickRecoveryLink();
@@ -60,7 +60,7 @@ public class UserAuthenticationParametrizedNegativeTests extends TestBase {
 
     @ParameterizedTest(name = "Восстановление пароля с несуществующим email: {0}")
     @MethodSource("provideNonExistentEmails")
-    @DisplayName("Негативные тесты: несуществующие email при восстановлении")
+    @DisplayName("Негативные тесты: несуществующие email при восстановлении. ")
     void recoverPasswordWithNonExistentEmailTest(String email) {
         authenticationPage.openLoginPage(0);
         authenticationPage.clickRecoveryLink();
