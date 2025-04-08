@@ -56,7 +56,7 @@ tasks.withType(Test) {
 
 task uiTests(type: Test) {
     useJUnitPlatform {
-        includeTags("codebasics-auth-tests")
+        includeTags("codebasics-tests")
     }
 }
 

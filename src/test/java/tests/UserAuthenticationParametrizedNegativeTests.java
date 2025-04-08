@@ -13,10 +13,10 @@ import java.util.stream.Stream;
 
 import static data.Credentials.LOGIN;
 
-@Tag("codebasics-auth-tests")
+@Tag("codebasics-tests")
 @Tag("parametrized")
 @DisplayName("Параметризованные тесты авторизации")
-public class UserAuthenticationParametrizedTests extends TestBase {
+public class UserAuthenticationParametrizedNegativeTests extends TestBase {
 
     AuthenticationPage authenticationPage = new AuthenticationPage();
 
