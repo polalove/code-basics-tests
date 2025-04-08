@@ -8,10 +8,6 @@ public class TestData {
 
     private static final Faker faker = new Faker(new Locale("en"));
 
-    public static String getRandomInvalidEmail() {
-        return faker.lorem().word();
-    }
-
     public static String getRandomNonExistentEmail() {
         return faker.internet().emailAddress();
     }
