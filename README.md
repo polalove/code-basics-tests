@@ -15,6 +15,8 @@ ____
 
 * <a href="#allure">Allure отчет</a>
 
+* <a href="#alluretestops">Интеграция с Allure TestOps</a>
+
 * <a href="#telegram">Уведомление в Telegram при помощи бота</a>
 
 ____
@@ -45,6 +47,8 @@ ____
 - ✓ *Восстановление пароля с невалидным email.*
 - ✓ *Восстановление пароля с несуществующим email.*
 - ✓ *Восстановление пароля с пустым полем email.*
+- ✓ *Проверка успешной смены языка.*
+- ✓ *Проверка открытия тренажера с курсами по Java.*
 
 
 
@@ -95,7 +99,7 @@ ___
 ### *Основная страница отчёта*
 
 <p align="center">  
-<img title="Allure Overvi ew Dashboard" src="images/screenshots/AllureMainPage.png" width="850">  
+<img title="Allure Overview Dashboard" src="images/screenshots/AllureMainPage.png" width="850">  
 </p>  
 
 ### *Тест-кейсы*
@@ -108,6 +112,13 @@ ___
 
   <p align="center">  
 <img title="Allure Graphics" src="images/screenshots/AllureGraphic.png" width="850">
+
+</p>
+
+### *Интеграция с Allure TestOps*
+
+  <p align="center">  
+<img title="Allure Graphics" src="images/screenshots/AllureTestOps.png" width="850">
 
 </p>
 
