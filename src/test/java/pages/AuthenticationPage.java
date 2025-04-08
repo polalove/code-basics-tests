@@ -19,14 +19,10 @@ public class AuthenticationPage {
     private final SelenideElement recoveryEmailInput = $("#remind_password_form_email");
 
 
-    public void openMainPage() {
-        open("/ru");
-    }
-
     public void openLoginPage(int index) {
+        open("/ru");
         loginLink.get(index).click();
     }
-
 
     public void enterEmail(String email) {
         emailInput.setValue(email);
