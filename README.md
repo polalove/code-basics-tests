@@ -115,11 +115,10 @@ ___
 
 </p>
 
-### *Интеграция с Allure TestOps*
+### Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/4707/test-cases?treeId=0)
 
-  <p align="center">  
-<img title="Allure Graphics" src="images/screenshots/AllureTestOps.png" width="850">
-
+<p align="center">
+  <img title="Allure Graphics" src="images/screenshots/AllureTestOps.png" width="850">
 </p>
 
 ____
